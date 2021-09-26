@@ -1,0 +1,16 @@
+.container {
+    background-color: white;
+    height: 3em;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.logo {
+  height: 100%;
+  margin-right: 15px;
+  cursor: pointer;
+}

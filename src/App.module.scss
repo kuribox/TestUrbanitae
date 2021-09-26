@@ -1,0 +1,13 @@
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.content {
+    display: flex;
+    background-color: darken(white, 5%);
+    flex: 1;
+    padding: 15px;
+}

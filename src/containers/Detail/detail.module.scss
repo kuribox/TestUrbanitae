@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.errorMsg {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: lighten(red, 40%);
+    border: 3px solid lighten(red, 20%);;
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: lighten(red, 20%);
+}
+
+.detailContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.image {
+    height: 300px;
+    width: 30vw;
+
+    & > img {
+        max-height: 300px;
+        max-width: 30vw;
+    }
+}
+
+.imageContainer {
+    height: 100px;
+    width: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+}
+
+.detailContainerData {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.goBack {
+    width: 3vw;
+    align-self: flex-start;
+    cursor: pointer;
+}
