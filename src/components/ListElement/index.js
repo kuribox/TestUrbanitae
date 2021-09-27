@@ -1,18 +1,13 @@
 import React from 'react';
 import styles from './listElement.module.scss';
-import { useHistory } from 'react-router-dom';
 
-const ListElement = ({ element }) => {
-    const history = useHistory();
-
+const ListElement = ({ element, onPress }) => {
     return (
         <div
             className={styles.container}
-            onClick={() => {
-                history.push(`detail/${element.id}`)
-            }}>
+            onClick={() => { onPress(element.id) }}>
             <div className={styles.imageContainer}>
-                <img className={styles.image} src={element.image} />
+                <img className={styles.image} src={element.image} alt={element.id}/>
             </div>
             <span className={styles.title}>{element.title}</span>
         </div>

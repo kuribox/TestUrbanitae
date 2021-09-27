@@ -2,7 +2,6 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import styles from "./home.module.scss";
 import Button from "../../components/Button";
-import { useDispatch } from 'react-redux';
 
 const App = () => {
   const history = useHistory();

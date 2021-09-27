@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import Loader from "react-loader-spinner";
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './list.module.scss';
 import { searchTitleAction } from '../../actions';
 import SearchBox from '../../components/SearchBox';
-import ListElement from "../../components/ListElement";
+import List from '../../components/List';
+import { useHistory } from 'react-router-dom';
 
 const ListContainer = () => {
-  // const [searchValue, setSearchValue] = useState(null);
+  const history = useHistory();
+
   const [timeoutToSearch, setTimeoutToSearch] = useState(null);
   const [isDirty, setIsDirty] = useState(false);
 
@@ -27,50 +28,20 @@ const ListContainer = () => {
           setTimeoutToSearch(setTimeout(() => {
             dispatch(searchTitleAction({ value: event.target.value}));
             setIsDirty(true);
-            // setSearchValue(event.target.value);
           }, 500));
         }}
       />
-      <div className={styles.listContent}>
-        {loading && (
-          <Loader
-            type="Puff"
-            color="#88b04b"
-            height={30}
-            width={30}
-          />
-        )}
 
-        {
-          !loading && errorMsg && isDirty && (
-            <div className={styles.errorMsg}> 
-              <span>{errorMsg}</span>
-            </div>
-          )
-        }
-
-        {
-          !loading && !errorMsg && results && results.length === 0 && isDirty && (
-            <div className={styles.errorMsg}>
-              <span>No se encontraron resultados para su busqueda</span>
-            </div>
-          )
-        }
-
-        {
-          !loading && results && !errorMsg && results.length > 0 && isDirty && (
-            <>
-              <div className={styles.searchTitle}>
-                Resultados de la busqueda de {searchKey}
-              </div>
-              {
-                results.map(e => <ListElement key={e.id} element={e} />)
-              }
-            </>
-          )
-        }
-      </div>
-   
+      <List 
+        loading={loading}
+        searchKey={searchKey}
+        elements={results}
+        errorMsg={errorMsg}
+        isDirty={isDirty}
+        onPress={(id) => {
+          history.push(`detail/${id}`)
+        }}
+      />
     </div>
   );
 }

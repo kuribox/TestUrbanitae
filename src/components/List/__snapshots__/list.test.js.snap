@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot check 1`] = `
+<div
+  className="listContent"
+/>
+`;

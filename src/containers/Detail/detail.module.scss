@@ -24,26 +24,30 @@
     flex-direction: row;
 }
 
-.image {
-    height: 300px;
-    width: 30vw;
-
-    & > img {
-        max-height: 300px;
-        max-width: 30vw;
+@media screen and (max-width: 900px) {
+    .detailContainer {
+        flex-direction: column;
     }
 }
 
-.imageContainer {
-    height: 100px;
-    width: 5vw;
-    display: flex;
+.image {
+    flex: 1;
     justify-content: center;
-    align-items: center;
-    margin-right: 1vw;
+    display: flex;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    align-items: flex-start;
+
+    & > img {
+        object-fit: contain;
+        max-height: 80vh;
+        max-width: 50vw;
+    }
 }
 
 .detailContainerData {
+    flex: 2;
     display: flex;
     flex-direction: column;
 }
@@ -60,7 +64,7 @@
 }
 
 .goBack {
-    width: 3vw;
+    width: 30px;
     align-self: flex-start;
     cursor: pointer;
 }

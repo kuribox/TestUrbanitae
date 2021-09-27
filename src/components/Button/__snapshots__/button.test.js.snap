@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check click 1`] = `
+<div
+  className="container"
+  onClick={[Function]}
+>
+  <span
+    className="label"
+  />
+</div>
+`;
+
+exports[`Snapshot check 1`] = `
+<div
+  className="container"
+>
+  <span
+    className="label"
+  />
+</div>
+`;

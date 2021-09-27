@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import {useParams } from "react-router-dom";
+import { useHistory, useParams } from 'react-router-dom';
 import Loader from "react-loader-spinner";
 import { searchOneElementAction } from '../../actions';
 import styles from "./detail.module.scss";
@@ -18,11 +17,13 @@ const Detail = ({element}) => {
 
   useEffect(() => {
     dispatch(searchOneElementAction({ value: id }))
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); 
 
   return (
     <div className={styles.container}>
       <img
+        alt="back"
         onClick={() => {
           history.goBack();
         }}
@@ -50,7 +51,7 @@ const Detail = ({element}) => {
       {!loading && data && (
         <div className={styles.detailContainer}>
           <div className={styles.image}>
-            <img src={data.image} />
+            <img src={data.image} alt=""/>
           </div>
 
           <div className={styles.detailContainerData}>
